@@ -1,34 +1,26 @@
-/* use binary (+) operator to add two complex numbers. */  
-
+// write a c++ program to complex numbers addition and subtraction using binary operand
 #include <iostream>  
-using namespace std;  
+using namespace std;
+
 class Complex_num  
-{  
-    // declare data member or variables  
+{   
     int x, y;  
     public:  
-        // create a member function to take input  
-        void inp()  
+        void read()  
         {  
-            cout << " Input two complex number: " << endl;  
+            cout << "Enter the first complex number: " << endl;  
             cin >> x >> y;  
-        }         
-        // use binary '+' operator to overload  
+        }          
         Complex_num operator + (Complex_num obj)  
-        {  
-            // create an object  
-            Complex_num A;  
-            // assign values to object  
+        {   
+            Complex_num A;   
             A.x = x + obj.x;  
             A.y = y + obj.y;  
             return (A);  
         }         
-        // overload the binary (-) operator  
         Complex_num operator - (Complex_num obj)  
-        {  
-            // create an object  
+        {    
             Complex_num A;  
-            // assign values to object  
             A.x = x - obj.x;  
             A.y = y - obj.y;  
             return (A);  
@@ -47,22 +39,19 @@ class Complex_num
 };  
 int main ()  
 {  
-Complex_num x1, y1, sum, sub; // here we created object of class Addition i.e x1 and y1   
-    // accepting the values  
-    x1.inp();  
-    y1.inp();     
-    // add the objects  
-    sum = x1 + y1;  
-    sub = x1 - y1; // subtract the complex number     
-    // display user entered values  
-    cout << "\n Entered values are: \n";  
+Complex_num a, b, sum, sub;  
+    a.read();  
+    b.read();     
+    sum = a + b;  
+    sub = a - b;  
+    cout << "\nEntered values are: \n";  
     cout << " \t";  
-    x1.print();  
+    a.print();  
     cout << " \t";  
-    y1.print();   
+    b.print();   
     cout << "\n The addition of two complex (real and imaginary) numbers: ";  
-    sum.print(); // call print function to display the result of addition     
+    sum.print(); 
     cout << "\n The subtraction of two complex (real and imaginary) numbers: ";  
-    sub.print2(); // call print2 function to display the result of subtraction  
+    sub.print2
     return 0;  
 }  
